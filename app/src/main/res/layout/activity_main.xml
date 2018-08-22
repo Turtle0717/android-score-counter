@@ -1,0 +1,254 @@
+<!-- Outer Relative for whole app layout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Inner Linear Layout to hold both Team A and B linear layouts -->
+
+    <LinearLayout
+        android:id="@+id/teamscore_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Team A name -->
+            <TextView
+                android:id="@+id/teamA_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="Team A"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+
+            <!-- Start of Relative layout for runs and outs-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#616161"
+                    android:padding="4dp"
+                    android:text="Runs"
+                    android:id="@+id/teamArun_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outs"
+                    android:padding="4dp"
+                    android:textColor="#616161"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/teamAout_view" />
+
+                <TextView
+                    android:id="@+id/teamArun_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:padding="4dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="56sp"
+                    android:layout_below="@+id/teamArun_view"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/teamAout_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="56sp"
+                    android:layout_below="@+id/teamAout_view"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+            <!-- End of relative layout for ins and outs-->
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="teamARunPoint"
+                android:text="+1 Run Point" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="teamAOutPoint"
+                android:text="+1 Out Point" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"></View>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Team B name -->
+            <TextView
+                android:id="@+id/teamB_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="Team B"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+
+            <!-- Start of Relative layout Team B for runs and outs-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#616161"
+                    android:padding="4dp"
+                    android:text="Runs"
+                    android:id="@+id/teamBrun_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outs"
+                    android:padding="4dp"
+                    android:textColor="#616161"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/teamBout_view" />
+
+                <TextView
+                    android:id="@+id/teamBrun_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:padding="4dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="56sp"
+                    android:layout_below="@+id/teamBrun_view"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/teamBout_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="56sp"
+                    android:layout_below="@+id/teamBout_view"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+            <!-- End of relative layout for ins and outs-->
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="teamBRunPoint"
+                android:text="+1 Run Point " />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="teamBOutPoint"
+                android:text="+1 Out Point" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/inning_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamscore_LinearLayout"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-medium"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Inning"
+        android:textColor="#616161"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/inning_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:padding="4dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="56sp"
+        android:layout_below="@+id/inning_view"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/minusInning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/inning_score"
+        android:layout_toLeftOf="@+id/inning_score"
+        android:text="-"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:onClick="minusInning"/>
+
+    <Button
+
+        android:id="@+id/addInning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/inning_score"
+        android:layout_toRightOf="@+id/inning_score"
+        android:text="+"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:onClick="addInning"/>
+
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="resetScore"
+        android:text="Reset" />
+
+</RelativeLayout>
+
